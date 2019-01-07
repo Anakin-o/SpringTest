@@ -23,8 +23,8 @@ public class SwaggerDemoController {
     private static final Logger logger = LoggerFactory.getLogger(SwaggerDemoController.class);
 
 
-    @ApiOperation(value = "根据id查询学生信息", notes = "查询数据库中某个的学生信息")
-    @ApiImplicitParam(name = "id", value = "学生ID", paramType = "path", required = true, dataType = "Integer")
+    @ApiOperation(value = "根据id查询用户信息", notes = "查询数据库中某个的用户信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", paramType = "path", required = true, dataType = "Integer")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User getStudent(@PathVariable long id) {
         logger.info("开始查询某个用户信息");
