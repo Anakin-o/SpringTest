@@ -2,7 +2,6 @@ package com.example.boot.demo.controller;
 
 import com.example.boot.demo.entity.User;
 import com.example.boot.demo.repository.UserRepository;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -24,7 +23,15 @@ public class PersonController {
         System.out.println("id: " + id);
         return u;
     }
+    @RequestMapping("getUserVoById")
+    @ResponseBody
+    public User getUserVoById(Long id) {
+        User u = userRepository.findById(id);
+        System.out.println("userRepository: " + userRepository);
+        System.out.println("id: " + id);
 
+        return u;
+    }
 
     @RequestMapping("savePerson")
     @ResponseBody
